@@ -1,0 +1,19 @@
+<div class="shell">
+  <nav><strong>Privacy<span>/programs</span></strong><div><a href="#portfolio">Portfolio</a><a href="#architecture">Architecture</a></div><span class="status"><i></i> Synced</span></nav>
+  <main>
+    <header><div><span class="eyebrow">Angular systems lab</span><h1>Privacy engineering office</h1><p>Signal-driven portfolio intelligence with SSR and hydration.</p></div><button type="button">Export brief</button></header>
+    <section class="metrics" aria-label="Portfolio metrics">
+      <article><span>Control coverage</span><strong>{{ portfolioProgress() }}%</strong><div class="bar"><i [style.width.%]="portfolioProgress()"></i></div></article>
+      <article><span>Data domains</span><strong>{{ workstreams().length }}</strong><small>Angular signal state</small></article>
+      <article><span>At-risk programs</span><strong>{{ atRisk() }}</strong><small>Computed dependency</small></article>
+    </section>
+    <section class="panel" id="portfolio">
+      <div class="panel-title"><div><span class="eyebrow">Executive portfolio</span><h2>Strategic workstreams</h2></div><span>Updated just now</span></div>
+      <div class="work header-row"><span>Program</span><span>Team</span><span>Progress</span><span>Risk</span><span></span></div>
+      @for (item of workstreams(); track item.id) {
+        <div class="work"><b>{{ item.name }}</b><span>{{ item.team }}</span><div class="mini-bar"><i [style.width.%]="item.progress"></i></div><span class="risk" [class.medium]="item.risk === 'Medium'">{{ item.risk }}</span><button type="button" (click)="advance(item.id)" [disabled]="item.progress === 100">+5%</button></div>
+      }
+    </section>
+    <section class="architecture" id="architecture"><span class="eyebrow">Architecture</span><h2>Built for enterprise scale</h2><p>OnPush change detection, fine-grained signals, computed state, SSR, hydration, strict TypeScript, and deterministic component tests.</p></section>
+  </main>
+</div>
