@@ -20,9 +20,13 @@ Privacy Control Plane helps organisations understand where personal information 
 
 The product uses Angular to organise separate pages, forms, checks, and shared information. Forms warn users when information is missing. Automated checks and a production build confirm that the product works correctly.
 
+## Java backend highlights
+
+The Java backend uses Spring Boot. It provides real API endpoints to list, search, and create privacy review records. It checks incoming information, returns clear errors, exposes a health check, and includes automated Java tests.
+
 ## Architecture and state flow
 
-The product is split into clear pages. Shared information is kept in one central place, while each page manages only the search box, filters, or form currently being used. A user action updates the shared information and every related page shows the new result.
+The browser application calls the Java API on port 8080. The Java service checks the request and keeps the shared product information. After a user creates a record, the API returns the saved result and the browser refreshes the list.
 
 ## Accessibility and responsive behaviour
 
@@ -37,10 +41,15 @@ npm ci
 npm test -- --watch=false
 npm run build
 npm start
+npm run backend:test
+npm run backend:build
+npm run fullstack
 ```
 
 ## Structure
 
+- `backend/` — the Java API, validation, business rules, and tests.
+- `scripts/run-full-stack.mjs` — starts the frontend and backend together.
 - `src/` — the product pages, actions, and design.
 - `docs/demo.webm` — a short video showing the product.
 - `package.json` — the commands and packages needed to run it.

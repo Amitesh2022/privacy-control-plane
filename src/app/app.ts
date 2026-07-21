@@ -1,9 +1,11 @@
+import { BackendStatus } from './backend-status';
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 
 type Workstream = { id: number; name: string; team: string; progress: number; risk: 'Low' | 'Medium' };
 
 @Component({
   selector: 'app-root',
+  imports: [BackendStatus],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

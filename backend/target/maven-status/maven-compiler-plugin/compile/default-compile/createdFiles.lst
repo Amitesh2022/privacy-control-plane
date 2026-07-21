@@ -1,0 +1,6 @@
+com/amitesh/portfolio/privacycontrolplane/api/CreateRecordRequest.class
+com/amitesh/portfolio/privacycontrolplane/api/PortfolioController.class
+com/amitesh/portfolio/privacycontrolplane/PortfolioApplication.class
+com/amitesh/portfolio/privacycontrolplane/domain/PortfolioRecord.class
+com/amitesh/portfolio/privacycontrolplane/api/ApiExceptionHandler.class
+com/amitesh/portfolio/privacycontrolplane/service/PortfolioService.class
