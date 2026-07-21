@@ -2,13 +2,17 @@
 
 Privacy Control Plane helps organisations understand where personal information is used and whether it is protected.
 
-[Watch the product demo](docs/demo.webm)
+## Live demo
 
-## Business problem and users
+[Watch the recorded product demonstration](docs/demo.webm)
 
-Privacy Control Plane helps organisations understand where personal information is used and whether it is protected. It is useful for privacy teams, service owners, risk teams, and managers.
+This recording shows the real product running and demonstrates its main screens and actions.
 
-## Key workflows
+## Screenshots
+
+![Privacy Control Plane product screenshot](docs/screenshot.png)
+
+## Main features
 
 - See which services use personal information.
 - Find missing privacy checks.
@@ -16,45 +20,41 @@ Privacy Control Plane helps organisations understand where personal information 
 - Assign work to the right team.
 - Track improvements and readiness.
 
-## Angular highlights
+## Technology used
 
-The product uses Angular to organise separate pages, forms, checks, and shared information. Forms warn users when information is missing. Automated checks and a production build confirm that the product works correctly.
+- Angular with strict TypeScript.
+- Angular CLI for local development and production builds.
+- Java with Spring Boot for the backend.
+- Maven for Java builds.
+- Angular tests and JUnit for automated checks.
 
-## Java backend highlights
+## Installation instructions
 
-The Java backend uses Spring Boot. It provides real API endpoints to list, search, and create privacy review records. It checks incoming information, returns clear errors, exposes a health check, and includes automated Java tests.
+You need Node.js 20 or newer, Java 21 or newer, and Maven 3.9 or newer.
 
-## Architecture and state flow
-
-The browser application calls the Java API on port 8080. The Java service checks the request and keeps the shared product information. After a user creates a record, the API returns the saved result and the browser refreshes the list.
-
-## Accessibility and responsive behaviour
-
-Buttons, forms, and links can be used with a keyboard. Labels explain what each field does, and important information is shown with words, not only colours. The layout also adjusts for tablets and phones.
-
-## Run and verify
-
-These commands install the project, check it, and start it on a computer:
+Install the frontend packages:
 
 ```bash
 npm ci
-npm test -- --watch=false
+```
+
+Run all automated checks and production builds:
+
+```bash
+npm test
 npm run build
-npm start
 npm run backend:test
 npm run backend:build
+```
+
+Start the frontend and Java backend together:
+
+```bash
 npm run fullstack
 ```
 
-## Structure
+Open [http://localhost:4200](http://localhost:4200) for the product. The Java API runs at [http://localhost:8080](http://localhost:8080).
 
-- `backend/` — the Java API, validation, business rules, and tests.
-- `scripts/run-full-stack.mjs` — starts the frontend and backend together.
-- `src/` — the product pages, actions, and design.
-- `docs/demo.webm` — a short video showing the product.
-- `package.json` — the commands and packages needed to run it.
-- `README.md` — this simple product guide.
+## Commercial licensing/contact
 
-## Tradeoffs and roadmap
-
-This project uses sample information and does not connect to a real company system. A future version could connect to real service records, add approval roles, alerts, and formal privacy reports.
+No commercial license is granted automatically. For commercial licensing, integration work, consulting, or partnership enquiries, contact [Amitesh2022 through GitHub](https://github.com/Amitesh2022).
